@@ -1,37 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>wishdasher</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/custom_style.css">
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/custom_script.js"></script>
+    <title>Sophie Mori</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="img/icons/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
-
 <body>
+  <nav id="float-nav">
+    <ul class="nav">
+      <li><a id="nav-top" href="#intro" style="font-size: .9em;">
+        <span class="c-r">▲ </span>
+        <span class="c-o">▲ </span>
+        <span class="c-y">▲ </span>
+        <span class="c-g">▲ </span>
+        <span class="c-b">▲ </span>        
+        <span class="c-p">▲ </span>
+      </a></li>
+      <li><a class="c-r-inv" href="#projects">Projects</a></li>
+      <li><a class="c-g-inv" href="#teaching">Teaching</a></li>
+      <li><a class="c-b-inv" href="#misc">Miscellaneous</a></li>
+    </ul>
+  </nav>
+  <div id="body">
+    <section id="intro">
+      <a name="intro"></a><h1 id="sophie-name">Sophie Mori</h1>
+      <p>Hello! I study computer science and linguistics at MIT. I am interested
+        in how we can use computation to study natural language and how we can
+        use technology to improve education. Other interests of mine include web
+        design and urban transportation. I enjoy puzzles of all sorts.</p>
+      <p>My handle <code>wishdasher</code> is an almost-spoonerism of dishwasher.</p>
+      <div id="icons">
+        <a id="github" href="https://github.com/wishdasher">
+            <img src="img/icons/github.svg" />
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/in/ksmori">
+            <img src="img/icons/linklink.svg" />
+        </a>
+        <a id="twitter" href="https://twitter.com/ksmori">
+            <img src="img/icons/tweet.svg" />
+        </a>
+        <a id="blog" class="text-icon" href="https://elinkaari.wordpress.com">
+            blog
+        </a>
+        <a id="resume" class="text-icon" href="files/resume.pdf">
+            resume
+        </a>
+      </div>
+    </section>
+    <hr>
+    <section>
+      <a name="projects"></a><h1 class="c-dr">Projects</h1>
+      <div class="project-box">
+        <a href="boat.html">
+          <img src="img/boat/me.jpg">
+          <div class="overlay">
+            <div class="overlay-text">
+              <h4 class="no-top">Electric Motor Boat</h4>
+              Building a boat over the course of a summer with students from Singapore!
+            </div>
+          </div>
+        </a>
+        <a href="haunt.html">
+          <img src="img/haunt/house.jpg">
+          <div class="overlay">
+            <div class="overlay-text">
+              <h4 class="no-top">Next Haunt</h4>
+              Designing and building a haunted escape-the-room for Halloween
+            </div>
+          </div>
+        </a>
+        <a href="forces.html">
+          <img src="img/ff/tent.jpg">
+          <div class="overlay">
+            <div class="overlay-text">
+              <h4 class="no-top">Forces Frozen</h4>
+              Creating self-standing sculptures of cloth and ice
+            </div>
+          </div>
+        </a>
+        <a href="aqua.html">
+          <img src="img/penguins.jpg">
+          <div class="overlay">
+            <div class="overlay-text">
+              <h4 class="no-top">Aquarium Puzzlehunt</h4>
+              Writing puzzles for the freshmen's orientation event at the aquarium
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <hr>
+    <section>
+        <a name="teaching"></a><h1 class="c-dg">Teaching</h1>
+        <p>To be updated.</p>
+    </section>
+    <hr>
+    <section id="misc">
+      <a name="misc"></a><h1 class="c-db">Miscellaneous</h1>
+        <p>A <a href="https://elinkaari.wordpress.com/">blog</a> that I've been meaning to update.</p>
+        <p>I do a lot of puzzlehunts, usually with my team <a href="teammate.html">teammate</a>.</p>
+        <!-- <p><a href="origami.html">Modular origami</a> is an interest of mine.</p> -->
+        <p>I love teaching! I'm a member of the <a href="https://esp.mit.edu/teach/index.html">MIT Educational Studies Program</a>, which organizes really cool outreach programs for middle and high school students in the Boston area. I've directed programs for them too.</p>
+        <p>For my freshman and sophomore years, I lived in Next House 4W, otherwise known as <a href="http://shireconnect.herokuapp.com/">The Shire</a>.</p>
+        <p>A paper: <a href="https://arxiv.org/abs/1605.04278">Universal Dependencies for Learner English</a>, the <a href="http://esltreebank.org/">website</a>, and the <a href="https://github.com/UniversalDependencies/UD_English-ESL">finished treebank of annotations</a>.</p>
+    </section>
 
-<div class="jumbotron text-center banner">
-	<h1 style="color: white; font-weight: bold; /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/">Sophie Mori</h1>
-</div>
-
-<div class="container">
-	<script src="js/nav.js"></script>
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<h1 class="text-center">Welcome!</h1>
-			<hr>
-			<p>Hi! My name is Sophie and I am an undergraduate student at MIT studying Computer Science and Linguistics. Currently, I am taking a semester off to work as a co-op on the digital forensics team at <a href="http://www.basistech.com" target="_blank">Basis Tech</a>. I am implementing feature requests and fixing reported bugs for the open source digital forensics software <a href="http://www.sleuthkit.org/autopsy/" target="_blank">Autopsy</a> and its underlying library <a href="http://www.sleuthkit.org/sleuthkit/index.php" target="_blank">The Sleuth Kit</a>.</p>
-			<p>My email address is ksmori at mit dot edu - feel free to contact me!</p>
-			<hr>
-			<p>Regarding <code>wishdasher</code>: I do not identify as a dasher of wishes; rather, I think it is an amusing almost-spoonerism of dishwasher.</p>
-		</div>
-
-	
-	</div>
-</div>
-
+  </div>
 </body>
 </html>
