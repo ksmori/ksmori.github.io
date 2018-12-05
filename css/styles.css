@@ -35,6 +35,10 @@ other
 .c-dg { color: #008F45; }
 .c-db { color: #0079AD; }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -129,12 +133,10 @@ ul.nav {
     text-align: left;
 }
 
-ul.nav > li {
+ul.nav > li > a {
     font-size: 1em;
     font-weight: 600;
-}
 
-ul.nav > li > a {
     display: block;
     padding: .8em 1em .8em;
     color: var(--grey);
@@ -145,13 +147,14 @@ ul.nav > li > a:hover {
     color: white;
 }
 
-#nav-top:hover {
+.rainbow-inv:hover {
     background-color: #dde3ee;
 }
 
 .c-r-inv:hover { background-color: var(--red); }
 .c-g-inv:hover { background-color: var(--green); }
 .c-b-inv:hover { background-color: var(--blue); }
+.c-n-inv:hover { background-color: var(--navy); }
 
 /* IMAGE DISPLAY HANDLING */
 
