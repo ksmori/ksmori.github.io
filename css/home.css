@@ -104,7 +104,8 @@
     -ms-transform: translate(-50%, -50%);
 }
 
-.overlay-text h4 {
+.overlay-text h2 {
+    margin-top: 0;
     font-size: 1.2em;
     color: var(--navy);
 }
