@@ -55,20 +55,13 @@
 
 /* PROJECT SECTION */
 .project-box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-size: 0px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px 5px;
 }
 
 .project-box > * {
-    flex-grow: 1;
-    display: block;
     position: relative;
-    height: auto;
-    max-width: calc(50% - 10px);
-    margin: 5px;
 }
 
 .project-box * img {
@@ -77,49 +70,40 @@
     height: auto;
 }
 
-.project-box *:hover .overlay {
-    background-color: rgba(255, 255, 255, 0.8);
-    opacity: 1;
+.project-box > a {
+    margin: 5px;
+    text-decoration: none;
+    border: 1px solid gray;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    transition: .2s ease;
+.project-box > a:hover {
+    opacity: 0.8;
 }
 
-.overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 75%;
-    min-height: 1em;
-    color: var(--text);
-    font-size: 16px;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+.project-info {
+    padding: 12px;
+    background-color: #004080;
+    color: white;
 }
 
-.overlay-text h2 {
+.project-info h2 {
     margin-top: 0;
+    margin-bottom: .3em;
     font-size: 1.2em;
-    color: var(--navy);
+    color: white;
 }
 
 
 @media only screen and (max-width: 720px) {
-    .project-box > * {
-        max-width: calc(50% - 10px);
+    .project-box {
+        grid-template-columns: 1fr;
     }
 }
 
+/* For phones */
 @media only screen and (max-width: 480px) {
-    .project-box > * {
-        max-width: 100%;
+    .project-box {
+        grid-template-columns: 1fr;
     }
     .overlay {
         background-color: rgba(255, 255, 255, 0.8);
