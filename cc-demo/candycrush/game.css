@@ -1,0 +1,260 @@
+/* Global variables */
+:root {
+	/*--color-light-gray: hsl(220, 10%, 85%);*/
+	--color-red: hsl(0, 80%, 48%);
+	--color-orange: hsl(30, 100%, 50%);
+	--color-yellow: gold;
+	--color-green: hsl(85, 90%, 37%);
+	--color-blue: hsl(210, 80%, 45%);
+	--color-purple: purple;
+	--color-accent: #3399ff;
+	--color-dark-grey: #666666;
+	--color-light-grey: #d3d3d3;
+	--duration-move: .1s; /* Duration to move by 1 cell */
+	--duration-back: .4s; /* Duration to move by 1 cell */
+	--duration-fade: .4s;
+
+	--radius: 5px;
+	--label-font-size: 20px;
+	--label-font-size-small: 12px;
+
+	--size: 8;
+}
+
+html {
+	display: flex;
+	min-height: 100vh;
+}
+
+body {
+	margin: auto;
+	font-family: Verdana, Arial;
+	font-size: var(--label-font-size);
+	position: relative;
+	z-index: -1;
+}
+
+header {
+
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+}
+
+.panel {
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#gen {
+	grid-column: 1;
+	text-align: center;
+	width: 140px;
+}
+
+#title {
+	margin: 5px;
+	color: var(--color-blue);
+}
+
+#scoreboard {
+	padding: 10px;
+	background-color: var(--color-light-grey);
+}
+
+#score {
+	font-size: 60px;
+}
+
+#start {
+	background-color: var(--color-red);
+	width: 130px;
+}
+
+.gen-module {
+	margin: 5px;
+	color: white;
+	font-weight: bold;
+	border-radius: var(--radius);
+}
+
+#game {
+	grid-column: 2;
+	display: flex;
+}
+
+#board {
+	width: 400px;
+	height: 400px;
+	max-width: 80vw;
+	max-height: 80vw;
+
+	padding: 1px;
+
+	/*overflow: hidden;*/
+
+	display: grid;
+	grid-template-rows: repeat(var(--size), 1fr);
+	grid-template-columns: repeat(var(--size), 1fr);
+
+	border-collapse: collapse;
+}
+
+.label {
+	font-weight: bold;
+}
+
+/* to mask incoming candies */
+.high-z-index {
+	z-index: 10;
+}
+
+.low-z-index {
+	z-index: -1;
+}
+
+.candy-cell {
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid grey;
+	margin-left: -1px;
+	margin-bottom: -1px;
+
+	max-width: calc(400px / (var(--size)));
+	max-height: calc(400px / (var(--size)));
+}
+
+.disabled {
+	color: var(--color-dark-grey) !important;
+	background-color: var(--color-light-grey) !important;
+}
+
+button {
+}
+
+.button {
+	border: 0;
+	box-shadow: none;
+	border-radius: var(--radius);
+	height: 50px;
+	font-size: var(--label-font-size);
+}
+
+.candy-image {
+	max-width:100%;
+	max-height:100%;
+}
+
+.moving {
+	/*top: var(--());
+	left: var(--());*/
+	pointer-events: none;
+	position: relative;
+	z-index: 100;
+}
+/*
+ANIMATION CLASSES
+*/
+.anim-hint {
+	animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: saturate(100%);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: saturate(300%);
+  }
+}
+
+.anim-fade {
+	animation: fade var(--duration-fade);
+	animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.anim-move {
+	animation: slide var(--duration-move);
+	animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+	0% {
+		transform: translate(var(--xmove), var(--ymove));
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+
+.anim-back {
+	animation: back var(--duration-back);
+	animation-fill-mode: forwards;
+}
+
+@keyframes back {
+    0% { left: var(--left); top: var(--top); }
+    100% { left: 0; top: 0; }
+}
+
+@media only screen and (max-width: 875px) and (min-width: 431px) {
+	main {
+		flex-direction: column;
+		align-items: center;
+	}
+	#gen {
+		max-width: 200px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+@media only screen and (max-width: 430px) {
+	main {
+		flex-direction: column;
+		align-items: center;
+	}
+	.button {
+		height: 30px;
+		max-width: 100px;
+		font-size: var(--label-font-size-small) !important;
+	}
+	#title {
+		font-size: var(--label-font-size) !important;
+	}
+	#gen {
+		display: flex;
+		flex-direction: column;
+		max-width: 120px;
+	}
+	.candy-cell {
+		max-width: calc(80vw / (var(--size) + 1));
+		max-height: calc(80vw / (var(--size) + 1));
+	}
+}
+
+/* color classes */
+#scoreboard.red { background-color: var(--color-red) }
+#scoreboard.orange { background-color: var(--color-orange) }
+#scoreboard.yellow { background-color: var(--color-yellow); color: var(--color-accent) }
+#scoreboard.green { background-color: var(--color-green) }
+#scoreboard.blue { background-color: var(--color-blue) }
+#scoreboard.purple { background-color: var(--color-purple) }
