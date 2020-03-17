@@ -117,12 +117,12 @@ section {
 
 section p {
     text-align: left;
-    margin: .6em 0;
+    margin: .4em 0;
 }
 
 /* Section heading */
-section > h1 {
-    margin-left: 30px;
+section > h1, section > h2 {
+    margin-left: 2.5%;
     align-self: flex-start;
 }
 
@@ -188,7 +188,6 @@ ul.nav > li > a:hover, ul.nav > li > a:focus {
     max-width: calc(100% - 10px);
     max-height: calc(100% - 10px);
     margin: 5px;
-    border: 2px solid var(--navy);
 }
 
 .image-full img {
