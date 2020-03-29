@@ -86,6 +86,11 @@ hr {
     border-style: solid;
 }
 
+hr.small {
+    width: 30%;
+    margin: .5em 0;
+}
+
 p {
     width: 95%;
     line-height: 1.5;
@@ -98,6 +103,15 @@ caption {
 #intro p, #misc p {
     /* TODO: extend to all paragraph blocks */
     max-width: 32em;
+}
+
+span.spoiler {
+    background-color: var(--text);
+    user-select: none;
+}
+
+span.spoiler:hover {
+    background-color: inherit;
 }
 
 /* LAYOUT STYLES */
