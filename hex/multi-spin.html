@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+
+		body {
+			--count: 5;
+			--honeycomb-width: 100px;
+			--spacing: 4px;
+			margin-top: 10vh;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+		}
+		.honeycomb {
+			width: calc((var(--honeycomb-width) + var(--spacing)) * var(--count));
+			height: calc((var(--honeycomb-width) + var(--spacing)) * var(--count));
+			position: relative;
+		}
+
+		.row {
+			width: inherit;
+			height: calc((var(--honeycomb-width)) * 1.1547);
+			margin-top: calc(-1 * var(--honeycomb-width) * 0.288675 + var(--spacing));
+			float: left;
+		}
+
+		.hexagon {
+			width: var(--honeycomb-width);
+			height: calc((var(--honeycomb-width)) * 1.1547);
+			float: left;
+			margin-right: var(--spacing);
+			animation-name: hexagon-fade;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+			opacity: 0;
+
+		}
+
+
+		.four {
+			margin-left: calc(var(--honeycomb-width) / 2 + var(--spacing) / 2);
+		}
+
+		.three {
+			margin-left: calc(var(--honeycomb-width) + var(--spacing));
+		}
+
+
+		/* Animations */
+		@keyframes hexagon-fade {
+			0% {opacity: 0;}
+			/*40% {opacity: .95;}*/
+			80% {opacity: 1;}
+			/*60% {opacity: .95;}*/
+			100% {opacity: 0;}
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="honeycomb">
+		<div class="row three">
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+		</div>
+		<div class="row four">
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 1">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 1">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+		</div>
+		<div class="row five">
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 1">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 0">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 1">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+		</div>
+		<div class="row four">
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 1">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 1">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+		</div>
+
+		<div class="row three">
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+			<div class="hexagon 2">
+				<img src="svg/logo-original.svg">
+			</div>
+		</div>
+	</div>
+	<script>
+		var hexagons = document.getElementsByClassName("hexagon");
+		var maxDelay = 2;
+		var minLength = 2;
+		var maxLength = 4;
+
+		var layer2 = document.getElementsByClassName("2");
+		var layer1 = document.getElementsByClassName("1");
+		var layer0 = document.getElementsByClassName("0");
+
+		console.log(layer2);
+		const order2 = [0, 1, 2, 4, 6, 8, 11, 10, 9, 7, 5, 3];
+		const order1 = [0, 1, 3, 5, 4, 2];
+		// const ordered2 = order2.map(index => layer2[index]);
+		// const ordered1 = order1.map(index => layer1[index]);
+		// const spiral = [...ordered2, ...ordered1, layer0[0]];
+		order2.forEach((hexagon, i) => {
+			const dur = 1.414;
+			layer2[hexagon].style.animationDuration = dur + "s";
+			layer2[hexagon].style.animationDelay = (dur / layer2.length * i - dur) + "s";
+			console.log(hexagon)
+		})
+
+		// const order1 = [0, 1, 3, 5, 4, 2];
+		// order1.forEach((hexagon, i) => {
+		// 	layer1[hexagon].style.animationDuration = "2s";
+		// 	layer1[hexagon].style.animationDelay = (2 / layer1.length * i - 2.5) + "s";
+		// 	console.log(hexagon)
+		// })
+
+		// spiral.slice().reverse().forEach((hexagon, i) => {
+		// 	const dur = 4;
+		// 	hexagon.style.animationDuration = (dur * 1.25) + "s";
+		// 	hexagon.style.animationDelay = (dur / spiral.length * i - dur) + "s";
+		// })
+
+	</script>
+
+</body>
+</html>
