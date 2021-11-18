@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>How Old Is Sam?</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐟</text></svg>">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <script type="text/javascript">
+
+  	function refresh() {
+  		var now = new Date();
+	    var sam = new Date("10 Feb 1997");
+
+	    var div_age = document.getElementById("age");
+	    var div_timer = document.getElementById("timer"); 
+
+		  div_age.innerHTML = (new Date(now - sam)).getUTCFullYear() - 1970;
+
+	    // var elapsed_s =  (now - sam)/1000; 
+	    // var elapsed_m = elapsed_s/60;
+	    // var elapsed_h = elapsed_m/60;
+	    // var elapsed_d = elapsed_h/24;
+	    // var elapsed_y = elapsed_h/24;
+
+	    // var floor = Math.floor;
+
+	    // div_timer.innerHTML = floor(elapsed_d) + " days, " + pad(floor(elapsed_h)%24) + " hours, " + pad(floor(elapsed_m)%60) + " minutes, " + pad(floor(elapsed_s)%60) + " seconds";
+
+  	}
+
+		window.addEventListener('load', function () {
+			refresh();
+		})
+  	// window.setInterval(refresh, 500);
+
+	</script>
+
+  <style>
+  	#outer {
+		  position: absolute;
+  		width: 20em;
+  		height: 12em;
+		  top: 50%;
+		  left: 50%;
+		  margin: -6em 0 0 -10em;
+  		text-align: center;
+  	}
+    #text {
+    	font-size: 2em;
+    }
+    #age-box {
+    	height: 12em;
+    	vertical-align: middle;
+    }
+    #age {
+    	font-size: 14em;
+  		animation: pulse 2s linear 0s infinite;
+    }
+
+    @keyframes pulse {
+		  0%, 100% {
+		  	font-size: 14em;
+		  	padding-top: 0;
+		  }
+		  50% {
+		  	font-size: 10em;
+		  }
+		  0% {
+		  	color: #6666ff;
+		  }
+		  10% {
+		  	color: #0099ff;
+		  }
+			50% {
+			  color: #00ff00;
+			}
+		  75% {
+		    color: #ff3399;
+			}
+			100% {
+			  color: #6666ff;
+			}
+  </style>
+</head>
+
+<body>
+	<div id="outer">
+		<div id="text">Sam is currently</div>
+		<div id="age-box"><div id="age"></div></div>
+	</div>
+</body>
+</html>
