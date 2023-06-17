@@ -40,8 +40,6 @@ html {
 }
 
 body {
-    display: flex;
-    justify-content: center;
     color: var(--text);
     background: white;
     font-family: "Roboto", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
@@ -93,7 +91,7 @@ hr.small {
 
 p {
     width: 95%;
-    line-height: 1.5;
+    line-height: 1.3;
 }
 
 caption {
