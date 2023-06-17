@@ -98,6 +98,9 @@
     .display-none {
       display: none;
     }
+    #invite {
+      opacity: 0;
+    }
     #info {
       opacity: 0;
       width: 100%;
@@ -135,6 +138,13 @@
       border-radius: 5px;
       opacity: 0;
     }
+    fieldset > input {
+      margin-bottom: 5px;
+    }
+    fieldset > input:last-child {
+      margin-bottom: 0px;
+      margin-top: 1px;
+    }
     sup {
       font-size: xx-small;
     }
@@ -156,7 +166,7 @@
 
 <body>
   <div class="main">
-    <h1>You are invited to a</h1>
+    <h1 id="invite">You are invited to a</h1>
     <div class="wrapper">
       <div id="error">WRONG</div>
       <input id="pop1" class="guess-letter word1" type="text" placeholder="🎈" maxlength="1" />
@@ -168,17 +178,15 @@
       <ul id="clue2" class="clue content">A movie with many 🎈🎈🎈 (2)</ul>
       <div id="info" class="content display-none">
         <p>Come enjoy a nice bowl of peanut<sup>⭐</sup> noodles at the hottest new one-day-only pop-up in Brooklyn! Meet some fellow noodle enthusiasts!</p>
-        <p>This pop-up will run on Sunday, June 25, 2023. There will be two separate time blocks. Please secure your reservation by choosing a time slot and filling out the form. If you need to change your reservation, resubmit the form.</p>
+        <p>This pop-up will run on Sunday, June 25, 2023. There are two separate time blocks. Please secure your reservation by choosing a time slot and filling out the form. If you need to change your reservation, resubmit the form.</p>
         <p>Exact location (A's and my apartment) will be sent out prior to the day of the event.</p>
         <form action="">
           <fieldset>
             <legend>Reservation (FAKE FORM, implement real form)</legend>
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email"><br>
-            <div class="spacer"></div>
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name"><br>
-            <div class="spacer"></div>
             <label>Slot:</label><br>
             <div>
               <input type="radio" id="slot1" name="slot" value="slot1" checked>
@@ -192,7 +200,6 @@
               <input type="radio" id="no-res" name="slot" value="no-res">
               <label for="no-res">I can't come</label>
             </div>
-            <div class="spacer"></div>
             <input type="submit" value="Submit">
           </fieldset>
         </form>

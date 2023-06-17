@@ -18,6 +18,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       Array.from(document.getElementsByClassName("clue")).forEach((elt) =>
         elt.classList.add("disappear")
       );
+      document.getElementById("invite").classList.add("appear");
       document.getElementById("info").classList.add("appear");
       document.getElementById("info").classList.remove("display-none");
     }
