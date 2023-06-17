@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>🎈</title>
+  <title>A wishdasher production</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="img/icons/favicon.ico" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎈</text></svg>">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script src="script/balloon.js"></script>
@@ -18,8 +18,8 @@
       font-weight: 600;
       color: #1d2951;
     }
-    .guess { position: relative; }
-    .guess input {
+    .wrapper { position: relative; }
+    input.guess-letter {
       width: 1.4em;
       text-align: center;
       font-size: larger;
@@ -29,7 +29,7 @@
       border-radius: 5px;
       text-transform: uppercase;
       }
-    .guess input:focus {
+    input.guess-letter:focus {
       border: 1px solid darkred;
       outline: 1px solid darkred;
       background: pink;
@@ -148,13 +148,16 @@
       font-style: italic;
       white-space: nowrap;
     }
+    .spacer {
+      height: 10px;
+    }
   </style>
 </head>
 
 <body>
   <div class="main">
-    <h1>You're invited to a</h1>
-    <div class="guess">
+    <h1>You are invited to a</h1>
+    <div class="wrapper">
       <div id="error">WRONG</div>
       <input id="pop1" class="guess-letter word1" type="text" placeholder="🎈" maxlength="1" />
       <input id="pop2" class="guess-letter word1" type="text" placeholder="🎈" maxlength="1" />
@@ -167,7 +170,32 @@
         <p>Come enjoy a nice bowl of peanut<sup>⭐</sup> noodles at the hottest new one-day-only pop-up in Brooklyn! Meet some fellow noodle enthusiasts!</p>
         <p>This pop-up will run on Sunday, June 25, 2023. There will be two separate time blocks. Please secure your reservation by choosing a time slot and filling out the form. If you need to change your reservation, resubmit the form.</p>
         <p>Exact location (A's and my apartment) will be sent out prior to the day of the event.</p>
-        <p>[INSERT FORM HERE]</p>
+        <form action="">
+          <fieldset>
+            <legend>Reservation (FAKE FORM, implement real form)</legend>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <div class="spacer"></div>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <div class="spacer"></div>
+            <label>Slot:</label><br>
+            <div>
+              <input type="radio" id="slot1" name="slot" value="slot1" checked>
+              <label for="slot1">Slot 1 (3 spots remaining)</label>
+            </div>
+            <div>
+              <input type="radio" id="slot2" name="slot" value="slot2">
+              <label for="slot2">Slot 2 (5 spots remaining)</label>
+            </div>
+            <div>
+              <input type="radio" id="no-res" name="slot" value="no-res">
+              <label for="no-res">I can't come</label>
+            </div>
+            <div class="spacer"></div>
+            <input type="submit" value="Submit">
+          </fieldset>
+        </form>
         <hr>
         <p><sup>⭐</sup> contains soy, sesame, optionally meat</p>
         <p><sup>❤️</sup> Many thanks to Evan T and Alice R for their help and support</p>
