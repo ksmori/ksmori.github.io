@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         elt.classList.add("disappear")
       );
       document.getElementById("info").classList.add("appear");
+      document.getElementById("info").classList.remove("display-none");
     }
   
     if (value.join("") == "PARTY") {
@@ -29,15 +30,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
   
   Array.from(elts).forEach(function(elt) {
     elt.addEventListener("keyup", function(event) {
-      if (elt.value.length == 1 && (event.keyCode != 9 && event.keyCode != 16)) {
+      if (elt.value.length == 1 && (event.keyCode != 9 && event.keyCode != 16 && event.keyCode != 8)) {
         if (!!(elt.nextElementSibling)) elt.nextElementSibling.focus();
-      }
-      if (event.keyCode == 8) {
-        if (!!(elt.previousElementSibling)) elt.previousElementSibling.focus(); 
       }
       checkSolved();
     });
   });
-
+  Array.from(elts).forEach(function(elt) {
+    elt.addEventListener("keydown", function(event) {
+      if (event.keyCode == 8 && elt.value.length == 0) {
+        if (!!(elt.previousElementSibling)) elt.previousElementSibling.focus(); 
+        event.preventDefault();
+      }
+    });
+  });
 
 });

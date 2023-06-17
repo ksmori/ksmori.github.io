@@ -50,7 +50,7 @@
       transition-timing-function: ease-in;
     }
     .fade-in-out {
-      animation: 1s fade-in-out;
+      animation: 1.5s fade-in-out;
       transition-timing-function: ease-in-out;
     }
     .popup, .disappear, .appear {
@@ -94,6 +94,9 @@
       padding: 4px 10px; /* set background boundaries */
       margin: auto;
       white-space: nowrap;
+    }
+    .display-none {
+      display: none;
     }
     #info {
       opacity: 0;
@@ -148,9 +151,6 @@
       font-style: italic;
       white-space: nowrap;
     }
-    .spacer {
-      height: 10px;
-    }
   </style>
 </head>
 
@@ -166,7 +166,7 @@
       <input id="pop5" class="guess-letter word2" type="text" placeholder="🎈" maxlength="1" />
       <ul id="clue1" class="clue content">Sound a 🎈 makes when pricked (3)</ul>
       <ul id="clue2" class="clue content">A movie with many 🎈🎈🎈 (2)</ul>
-      <div id="info" class="content">
+      <div id="info" class="content display-none">
         <p>Come enjoy a nice bowl of peanut<sup>⭐</sup> noodles at the hottest new one-day-only pop-up in Brooklyn! Meet some fellow noodle enthusiasts!</p>
         <p>This pop-up will run on Sunday, June 25, 2023. There will be two separate time blocks. Please secure your reservation by choosing a time slot and filling out the form. If you need to change your reservation, resubmit the form.</p>
         <p>Exact location (A's and my apartment) will be sent out prior to the day of the event.</p>
@@ -199,13 +199,10 @@
         <hr>
         <p><sup>⭐</sup> contains soy, sesame, optionally meat</p>
         <p><sup>❤️</sup> Many thanks to Evan T and Alice R for their help and support</p>
-
-
         <footer><hr><span>a wishdasher production</span></footer>
+        <div style="height: 40px"></div>
       </div>
-
     </div>
-
   </div>
 </body>
 </html>
