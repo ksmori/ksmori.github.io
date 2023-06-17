@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="img/icons/favicon.ico" />
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/balloon-style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script src="script/balloon.js"></script>
 
@@ -38,13 +37,15 @@
     .popup {
       animation: 0.7s popup; 
       transition-timing-function: cubic-bezier(0.055, 0.955, 1.000, 0.435);
+      pointer-events: none;
+      user-select: none;
     }
     .disappear {
       animation: 0.7s disappear;
       transition-timing-function: cubic-bezier(0.055, 0.955, 1.000, 0.435);
     }
     .appear {
-      animation: 2s appear;
+      animation: 2.5s appear;
       animation-delay: 1s;
       transition-timing-function: ease-in;
     }
@@ -96,7 +97,7 @@
     }
     #info {
       opacity: 0;
-      width: 30em;
+      width: 100%;
       text-align: left;
       margin-top: 10px;
     }
@@ -131,11 +132,9 @@
       border-radius: 5px;
       opacity: 0;
     }
-
     sup {
       font-size: xx-small;
     }
-
     footer {
       text-align: center;
     }
@@ -147,6 +146,7 @@
       background: white;
       padding: 0px 5px;
       font-style: italic;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -162,11 +162,11 @@
       <input id="pop4" class="guess-letter word2" type="text" placeholder="🎈" maxlength="1" />
       <input id="pop5" class="guess-letter word2" type="text" placeholder="🎈" maxlength="1" />
       <ul id="clue1" class="clue content">Sound a 🎈 makes when pricked (3)</ul>
-      <ul id="clue2" class="clue content">A movie with many 🎈 (2)</ul>
+      <ul id="clue2" class="clue content">A movie with many 🎈🎈🎈 (2)</ul>
       <div id="info" class="content">
         <p>Come enjoy a nice bowl of peanut<sup>⭐</sup> noodles at the hottest new one-day-only pop-up in Brooklyn! Meet some fellow noodle enthusiasts!</p>
         <p>This pop-up will run on Sunday, June 25, 2023. There will be two separate time blocks. Please secure your reservation by choosing a time slot and filling out the form. If you need to change your reservation, resubmit the form.</p>
-        <p>Exact location will be sent out prior to the day of the event.</p>
+        <p>Exact location (A's and my apartment) will be sent out prior to the day of the event.</p>
         <p>[INSERT FORM HERE]</p>
         <hr>
         <p><sup>⭐</sup> contains soy, sesame, optionally meat</p>
