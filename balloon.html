@@ -143,7 +143,7 @@
     }
     fieldset > input:last-child {
       margin-bottom: 0px;
-      margin-top: 1px;
+      margin-top: 10px;
     }
     sup {
       font-size: xx-small;
@@ -161,6 +161,9 @@
       font-style: italic;
       white-space: nowrap;
     }
+    .footnotes {
+      font-size: smaller;
+    }
   </style>
 </head>
 
@@ -177,9 +180,9 @@
       <ul id="clue1" class="clue content">Sound a 🎈 makes when pricked (3)</ul>
       <ul id="clue2" class="clue content">A movie with many 🎈🎈🎈 (2)</ul>
       <div id="info" class="content display-none">
-        <p>Come enjoy a nice bowl of peanut<sup>⭐</sup> noodles at the hottest new one-day-only pop-up in Brooklyn! Meet some fellow noodle enthusiasts!</p>
-        <p>This pop-up will run on Sunday, June 25, 2023. There are two separate time blocks. Please secure your reservation by choosing a time slot and filling out the form. If you need to change your reservation, resubmit the form.</p>
-        <p>Exact location (A's and my apartment) will be sent out prior to the day of the event.</p>
+        <p>Come enjoy a nice bowl of peanut<sup>⭐</sup> noodles at the hottest new pop-up in Brooklyn! Meet some fellow noodle (or pop-up) enthusiasts!</p>
+        <p>This pop-up will run on Sunday, June 25, 2023. There are two separate time blocks. Secure your reservation by choosing a time slot and filling out the form. If you need to change your reservation, resubmit the form. Please do not share this form without first talking to the host.</p>
+        <p>Exact location (A's and S's apartment in NW Brooklyn) will be sent out prior to the day of the event.</p>
         <form action="">
           <fieldset>
             <legend>Reservation (FAKE FORM, implement real form)</legend>
@@ -204,9 +207,12 @@
           </fieldset>
         </form>
         <hr>
-        <p><sup>⭐</sup> contains soy, sesame, optionally meat</p>
-        <p><sup>❤️</sup> Many thanks to Evan T and Alice R for their help and support</p>
-        <footer><hr><span>a wishdasher production</span></footer>
+        <div class="footnotes">
+          <p><sup>⭐</sup> contains soy, sesame, optionally meat. Unfortunately, due to scope, certain dietary restrictions cannot be accommodated.</p>
+          <p><sup>💰</sup> Donations will be accepted. Beneficiary TBA. </p>
+          <p><sup>❤️</sup> Many thanks to Evan T and Alice R for their help and support</p>
+          <footer><hr><span>a wishdasher production</span></footer>
+        </div>
         <div style="height: 40px"></div>
       </div>
     </div>

@@ -2,13 +2,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
   var elts = document.getElementsByClassName('guess-letter');
 
   function checkSolved() {
-    var value = 
-    Array.from(elts).map(elt =>
-      elt.value.toUpperCase()
-    );
+    var value = Array.from(elts).map(elt => elt.value.toUpperCase());
+    value = value.join("");
 
     // cheating is bad, YOU CHEATER
-    if (value.join("") == "POPUP") {
+    if (value == "POPUP") {
       Array.from(elts).forEach((elt, i) => {
         elt.disabled = true;
         elt.classList.add("popup-" + i);
@@ -23,8 +21,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
       document.getElementById("info").classList.remove("display-none");
     }
   
-    if (value.join("") == "PARTY") {
-      // lol did you think this was a party
+    // lol did you think this was a party, WRONG
+    if (value == "PARTY" || value == "BALLO") {
       document.getElementById("error").classList.add("fade-in-out");
     }
   }
@@ -37,6 +35,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       checkSolved();
     });
   });
+  
   Array.from(elts).forEach(function(elt) {
     elt.addEventListener("keydown", function(event) {
       if (event.keyCode == 8 && elt.value.length == 0) {
